@@ -8,7 +8,7 @@ export class AuthenticationService {
         private http: HttpClient) { }
 
     login(email: string, password: string) {
-        return this.http.post<any>(`https://localhost:44317/api/account/authenticate`, { email, password })
+        return this.http.post<any>(`https://i409368core.venus.fhict.nl/api/account/authenticate`, { email, password })
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {

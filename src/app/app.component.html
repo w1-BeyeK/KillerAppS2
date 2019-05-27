@@ -1,11 +1,47 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 
+<header *ngIf="checkKeyExists('currentUser')">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a style="font-size:24px;" class="navbar-brand" href="/">Travalon</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users">Users</a>
+        </li>
+        <li class="nav-item disabled">
+          <a class="nav-link" href="/cities">Cities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/ads">Ads</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+      </ul>
+      <div style="padding-right:25px;">
+        <span style="margin:5px;">{{getCurrentUserName()}}</span>
+        <img src="https://thumbor.forbes.com/thumbor/1280x868/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F42977075%2F960x0.jpg%3Ffit%3Dscale" class="rounded-circle" width="50px;" height="50px;">
+      </div>
+
+      <span class="navbar-text">
+      Admin Panel
+      </span>
+    </div>
+  </nav>
+</header>
+
 <!-- main app container -->
 <div class="jumbotron">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 offset-sm-3">
+      <div class="col-12">
         <router-outlet></router-outlet>
       </div>
     </div>

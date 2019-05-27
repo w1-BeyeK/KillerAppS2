@@ -9,6 +9,6 @@ export class UserService {
         private http: HttpClient) { }
 
     getAll() {
-        return this.http.get<User[]>(`https://localhost:44317/api/user`);
+        return this.http.get<User[]>(`https://i409368core.venus.fhict.nl/api/user`);
     }
 }
